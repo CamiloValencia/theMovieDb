@@ -1,0 +1,44 @@
+﻿<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{appTitle}}</h1>
+    </div>
+    <div class="col-md-4">
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control input-lg" placeholder="Search" [value]="searchVal" (input)="searchVal = $event.target.value" (keyup)="actorSearch()">
+            <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+          </div>
+        </div>
+      </form>
+      <hr />
+      <div class="list-group" *ngIf='actors?.length>0'>
+        <a *ngFor='let act of actors' href="{{act.id}}" class="list-group-item"  (click)="loadMovies($event)">{{act.name}}</a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <table class="table table-striped" *ngIf='movies?.length>0'>
+        <thead>
+          <tr>
+            <th style="width: 20%">
+             Release Date
+            </th>
+            <th style="width: 50%">
+              Title
+            </th>
+            <th style="width: 10%">Overview
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mv of movies">
+            <td>{{mv.release_date}}</td>
+            <td>{{mv.title}}</td>
+            <td>{{mv.overview}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

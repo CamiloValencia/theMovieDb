@@ -11,6 +11,5 @@
 |
 */
 
-
 $app->get('actor/search/{name}/{page}', 'ActorController@search');
-$app->get('actor/movies/{actor_id}', 'ActorController@movies');
+$app->get('actor/movies/{actor_id}/{page}', 'ActorController@movies');

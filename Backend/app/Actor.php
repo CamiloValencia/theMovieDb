@@ -127,7 +127,7 @@ class Actor extends TMDbEntity {
                 $actors_ids[] = $actor->id;
             }
         }
-        return ['pages' => $result->total_results, 'actors' => $actors];
+        return ['pages' => $result->total_pages, 'actors' => $actors];
     }
 
 }

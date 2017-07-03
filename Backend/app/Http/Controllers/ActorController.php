@@ -36,8 +36,8 @@ class ActorController extends Controller {
         return response()->json(Actor::search($name, $page));
     }
     
-    public function movies($actor_id){
-        return response()->json(Actor::find($actor_id)->getMovies());        
+    public function movies($actor_id, $page){
+        return response()->json(Actor::find($actor_id)->getMovies($page));        
     }
 
 }
